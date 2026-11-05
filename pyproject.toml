@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt_action_contract_audit"
+version = "0.1.0"
+description = "Review OpenAPI action contracts for unsafe transport, missing operation security, and unapproved write paths."
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Ahmed Areeb"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Security",
+  "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+gpt-action-audit = "tool:main"
+
+[tool.setuptools]
+py-modules = ["tool"]

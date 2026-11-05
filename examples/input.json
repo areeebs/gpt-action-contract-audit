@@ -1,0 +1,13 @@
+{
+  "openapi": "3.1.0",
+  "servers": [{"url": "https://api.example.test/v1"}],
+  "security": [{"oauth": ["records:read"]}],
+  "paths": {
+    "/records": {
+      "get": {"operationId": "searchRecords", "parameters": [{"name": "q", "in": "query", "schema": {"type": "string"}}]},
+      "post": {"operationId": "createRecord", "security": [{"oauth": ["records:write"]}],
+        "x-requires-human-approval": true, "x-input-validation": "server validates fields and object ownership",
+        "requestBody": {"required": true}}
+    }
+  }
+}
